@@ -38,6 +38,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    height: 100%;
 }
 .odin-logo{
     position: absolute;
@@ -163,6 +164,10 @@ a{
     }
     .right{
         overflow: auto;
+        height: 75%;
+    }
+    .left{
+        height: 25%;
     }
     .intro{
         font-size: larger;
@@ -173,6 +178,9 @@ a{
         justify-content: center;
         align-items: center;
         margin-top: 16px;
+    }
+    .odin-logo{
+        height: 100px;
     }
     .text-container{
         width:520px;
