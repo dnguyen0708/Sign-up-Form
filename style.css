@@ -8,9 +8,9 @@
     --input-border-focus: blue;
     --right-background-color:white;
     --default-border-color: #E5E7EB;
-    --top-right-height: 480px;
-    --mid-right-height: calc((100vh - var(--top-right-height)) / 2);
-    --bot-right-height: calc((100vh - var(--top-right-height)) / 2);
+    --top-right-height: 470px;
+    --mid-right-height: calc(100vh - var(--top-right-height) * 2);
+    --bot-right-height: 470px;
 }
 *{
     margin: 0;
@@ -61,6 +61,7 @@ body{
     width: 900px;
     padding:75px;
     flex-direction: column;
+    margin-top: 150px;
     gap: 32px;
 }
 img,.odin{
@@ -188,6 +189,7 @@ a{
     }
     .text-container{
         width:520px;
+        margin-top: 0;
     }
     .middle,.bottom{
         flex:1;
