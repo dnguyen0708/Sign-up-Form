@@ -8,9 +8,9 @@
     --input-border-focus: blue;
     --right-background-color:white;
     --default-border-color: #E5E7EB;
-    --top-right-height: 40vh;
-    --mid-right-height: 30vh;
-    --bot-right-height: 30vh;
+    --top-right-height: 480px;
+    --mid-right-height: calc((100vh - var(--top-right-height)) / 2);
+    --bot-right-height: calc((100vh - var(--top-right-height)) / 2);
 }
 *{
     margin: 0;
@@ -81,16 +81,19 @@ img{
 }
 .top{
     min-height: var(--top-right-height);
+    /* height:500px; */
     flex: 1 1 auto;
 }
 .middle{
     min-height: var(--mid-right-height);
+    /* height:400px; */
     padding: 10px 10px 10px 60px;
     box-shadow: 4px 8px 8px rgba(230,230,230);
     flex: 1 1 auto;
 }
 .bottom{
     min-height: var(--bot-right-height);
+    /* height: 400px; */
     padding: 50px;
     flex: 1 1 auto;
 }
@@ -163,7 +166,8 @@ a{
         flex-direction: column;
     }
     .right{
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 75%;
     }
     .left{
