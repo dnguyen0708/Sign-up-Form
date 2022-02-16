@@ -110,6 +110,10 @@ input[type="text"]:focus{
     box-shadow: 4px 8px 8px rgba(230,230,230);
     border-color: var(--input-border-focus) !important;
 }
+input[type="password"]:focus:invalid{
+    outline: none;
+    border-color: red !important;
+}
 label{
     margin-bottom: 4px;
     font-weight: 500;
