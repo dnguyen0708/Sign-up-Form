@@ -11,7 +11,6 @@ const validatePassword = function (e) {
         pw.setCustomValidity("Passwords do not match!");
         pw.reportValidity();
         pw.style.borderColor = 'red';
-        pw.style.setProperty(':focus', 'red');
         confirmPW.style.borderColor = 'red';
         // console.log("password do not match", pw.value, confirmPW.value)
         // warningMsg.textContent = "* Passwords do not match!";
