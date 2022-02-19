@@ -8,9 +8,9 @@
     --input-border-focus: blue;
     --right-background-color:white;
     --default-border-color: #E5E7EB;
-    --top-right-height: 470px;
+    --top-right-height: 35vh;
     --mid-right-height: calc(100vh - var(--top-right-height) * 2);
-    --bot-right-height: 470px;
+    --bot-right-height: 35vh;
 }
 *{
     margin: 0;
@@ -61,7 +61,7 @@ body{
     width: 900px;
     padding:75px;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 2.5rem;
     gap: 32px;
 }
 img,.odin{
