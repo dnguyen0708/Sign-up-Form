@@ -19,5 +19,5 @@ const validatePassword = function (e) {
         // form.submit();
     }
 }
-
+console.log("this is validation branch");
 submit.addEventListener('click', validatePassword);
