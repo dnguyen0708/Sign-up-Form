@@ -12,7 +12,7 @@
     --mid-right-height: calc(100vh - var(--top-right-height) * 2);
     --bot-right-height: 470px;
 }
-*{
+*,*::before,*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -106,24 +106,25 @@ img{
 .form-control{
     display: flex;
     flex-direction: column;
+    max-width:235px;
 }
-.form-control input[type="text"],
-              input[type="password"],
-              input[type="email"],
-              input[type="tel"]{
-    width:250px;
-    height: 30px;
-    border: 1px solid var(--default-border-color);
+.form-control input{
+    max-width: 100%;
+}
+input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"]{
+    border: 2px solid var(--default-border-color);
     border-radius: .3rem;
     font-size: large;
     padding: 6px;
 }
-input[type="text"]:focus{
-    outline: none;
-    box-shadow: 4px 8px 8px rgba(230,230,230);
-    border-color: var(--input-border-focus) !important;
-}
-input[type="password"]:focus:invalid{
+input[type="password"]:focus:invalid,
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid{
     outline: none;
     border-color: red !important;
 }
@@ -162,6 +163,32 @@ a{
     bottom: 10px;
     left: 30%;
 }
+.error {
+    width: 100%;
+    padding: 1px;
+    font-size: 100%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+.pwError,
+.confirmPWError,
+.emailError,
+.zipError,
+.countryError
+{
+    display: none;
+}
+.pwError.active,
+.confirmPWError.active,
+.emailError.active,
+.zipError.active,
+.countryError.active{
+    display: block;
+}
+
+
 @media only screen and (max-width:900px){
     body{
         flex-direction: column;
@@ -211,7 +238,4 @@ a{
         justify-content: center;
         align-items: center;
     }
-}
-#warningMsg{
-    color:red;
 }
