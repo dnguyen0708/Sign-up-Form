@@ -176,7 +176,8 @@ a{
 .confirmPWError,
 .emailError,
 .zipError,
-.countryError
+.countryError,
+.phoneError
 {
     display: none;
 }
@@ -184,7 +185,8 @@ a{
 .confirmPWError.active,
 .emailError.active,
 .zipError.active,
-.countryError.active{
+.countryError.active,
+.phoneError.active{
     display: block;
 }
 

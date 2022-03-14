@@ -11,8 +11,8 @@ const country = document.querySelector("#country");
 const zip = document.querySelector('#zipcode');
 const countryErrorMsg = document.querySelector(".countryError");
 const zipErrorMsg = document.querySelector('.zipError');
-const phoneNumber = document.querySelector('#phone')
-
+const phone = document.querySelector('#phone');
+const phoneErrorMsg = document.querySelector('.phoneError');
 
 const validateConfirmPw = function () {
     if (pw.value !== confirmPW.value) {
@@ -60,7 +60,9 @@ function formValidation(e) {
     if (!zip.validity.valid) {
         checkZip();
     }
-
+    if (!phone.validity.valid) {
+        checkPhone()
+    }
     e.preventDefault();
 }
 function validateEmail() {
@@ -75,10 +77,10 @@ function checkEmail() {
     email.style.borderColor = "red";
     emailErrorMsg.className = "error emailError active";
     if (email.validity.typeMismatch) {
-        emailErrorMsg.textContent = "please enter a valid email";
+        emailErrorMsg.textContent = "please enter a valid email!";
     }
     else if (email.validity.valueMissing) {
-        emailErrorMsg.textContent = "please enter an email";
+        emailErrorMsg.textContent = "please enter an email!";
     }
 }
 function validateCountry() {
@@ -101,10 +103,10 @@ function checkCountry() {
     country.style.borderColor = "red";
     countryErrorMsg.className = "error countryError active";
     if (country.validity.valueMissing) {
-        countryErrorMsg.textContent = "please enter a country";
+        countryErrorMsg.textContent = "please enter a country!";
     }
     else if (country.validity.patternMismatch) {
-        countryErrorMsg.textContent = "please enter a valid country";
+        countryErrorMsg.textContent = "please enter a valid country!";
     }
 }
 function checkZip() {
@@ -117,6 +119,24 @@ function checkZip() {
         zipErrorMsg.textContent = "please enter a zipcode!"
     }
 }
+function validatePhone() {
+    if (phone.validity.valid) {
+        phoneErrorMsg.className = "error phoneError";
+        phone.style.borderColor = "green";
+    } else {
+        checkPhone();
+    }
+}
+function checkPhone() {
+    phone.style.borderColor = "red";
+    phoneErrorMsg.className = "error phoneError active";
+    if (phone.validity.patternMismatch) {
+        phoneErrorMsg.textContent = "phone must be 10 digits"
+    }
+    else if (phone.validity.valueMissing) {
+        phoneErrorMsg.textContent = "please enter a phone number!"
+    }
+}
 
 pw.addEventListener("input", validatePW);
 confirmPW.addEventListener('input', validateConfirmPw);
@@ -124,3 +144,4 @@ form.addEventListener('submit', formValidation);
 email.addEventListener('input', validateEmail);
 country.addEventListener('input', validateCountry);
 zip.addEventListener('input', validateZip);
+phone.addEventListener('input', validatePhone);
