@@ -101,7 +101,10 @@ function checkCountry() {
     country.style.borderColor = "red";
     countryErrorMsg.className = "error countryError active";
     if (country.validity.valueMissing) {
-        countryErrorMsg.textContent = "please enter a country"
+        countryErrorMsg.textContent = "please enter a country";
+    }
+    else if (country.validity.patternMismatch) {
+        countryErrorMsg.textContent = "please enter a valid country";
     }
 }
 function checkZip() {
@@ -121,4 +124,3 @@ form.addEventListener('submit', formValidation);
 email.addEventListener('input', validateEmail);
 country.addEventListener('input', validateCountry);
 zip.addEventListener('input', validateZip);
-console.log(zip.value.length);
