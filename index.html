@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form_reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,17 +36,20 @@
                 <p class="intro">You <i>know</i> you want to.</p>
             </div>
         </div>
-        <form action="#nowhere" method="post">
+        <form action="#nowhere" method="post" novalidate>
             <div class="middle">
                 <h2 class="title">Let's do this!</h2>
                 <div class="form-group">
                     <div class="form-control">
-                        <label for="fname">FIRST NAME</label>
-                        <input type="text" name="first_name" id="fname" required>
+                        <label for="country">COUNTRY</label>
+                        <input type="text" name="country" id="country" required>
+                        <p class="error countryError"></p>
                     </div>
                     <div class="form-control">
-                        <label for="lname">LAST NAME</label>
-                        <input type="text" name="last_name" id="lname" required>
+                        <label for="zipcode">ZIPCODE</label>
+                        <input name="zipcode" id="zipcode" inputmode="numeric" pattern="^\d{5}|(\d{5}(-\d{4}))$"
+                            required>
+                        <p class="error zipError"></p>
                     </div>
                 </div>
 
@@ -53,6 +57,7 @@
                     <div class="form-control">
                         <label for="email">EMAIL</label>
                         <input type="email" name="email" id="email" required>
+                        <p class="error emailError"></p>
                     </div>
                     <div class="form-control">
                         <label for="phone">PHONE NUMBER</label>
@@ -63,11 +68,12 @@
                     <div class="form-control">
                         <label for="password">PASSWORD</label>
                         <input type="password" name="password" id="password" minlength="7" required>
-                        <!-- <p id="warningMsg"></p> -->
+                        <p class="error pwError"></p>
                     </div>
                     <div class="form-control">
                         <label for="confirm-password">CONFIRM PASSWORD</label>
-                        <input type="password" name="confirm_password" id="confirm-password" minlength="7" required>
+                        <input type="password" name="confirm_password" id="confirm-password" required>
+                        <p class="error confirmPWError"></p>
                     </div>
                 </div>
             </div>
